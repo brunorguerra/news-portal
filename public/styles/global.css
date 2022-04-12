@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    background: none;
+    outline: none;
+}
+:root {
+    --text-white: #fff;
+    --text-gray: #656565;
+    --text-black: #010314;
+
+    --purpleOpacity: #2f3f99;
+    --purple: #3f51b5;
+
+    --background-white: #fff;
+    --body: #eaeaea;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    background-color: var(--body);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    color: var(--text-black);
+}
+a,
+button {
+    cursor: pointer;
+}
+button {
+    font-size: 0;
+}
