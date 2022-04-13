@@ -1,33 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portal Notícias</title>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./styles/global.css" />
-        <link rel="stylesheet" href="./styles/style.css" />
-    </head>
+<html lang="pt_BR">
+    <%- include('partials/head.html') %>
     <body>
-        <header>
-            <div class="content">
-                <h1>Portal<span>Notícias</span></h1>
-
-                <form action="">
-                    <input type="text" name="search" placeholder="Buscar" />
-                    <button type="submit">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </button>
-                </form>
-            </div>
-        </header>
+        <%- include('partials/header.html') %>
 
         <main>
             <section id="spotlight">
@@ -78,6 +53,7 @@
                                     voluptates error nemo! Voluptatem odio,
                                     ullam nihil aperiam hic nemo iste!
                                 </p>
+                                <a href="/lorem-ipsum">Saiba mais</a>
                             </div>
                         </div>
                         <div class="card-news">
@@ -97,6 +73,7 @@
                                     voluptates error nemo! Voluptatem odio,
                                     ullam nihil aperiam hic nemo iste!
                                 </p>
+                                <a href="/lorem-ipsum">Saiba mais</a>
                             </div>
                         </div>
                         <div class="card-news">
@@ -116,6 +93,7 @@
                                     voluptates error nemo! Voluptatem odio,
                                     ullam nihil aperiam hic nemo iste!
                                 </p>
+                                <a href="/lorem-ipsum">Saiba mais</a>
                             </div>
                         </div>
                         <div class="card-news">
@@ -135,6 +113,7 @@
                                     voluptates error nemo! Voluptatem odio,
                                     ullam nihil aperiam hic nemo iste!
                                 </p>
+                                <a href="/lorem-ipsum">Saiba mais</a>
                             </div>
                         </div>
                     </div>
@@ -157,6 +136,7 @@
                                         adipisci velit pariatur voluptatem ut
                                         corporis nulla accusantium sequi.
                                     </p>
+                                    <a href="/natureza">Ler mais</a>
                                 </div>
                             </div>
 
@@ -174,6 +154,7 @@
                                         adipisci velit pariatur voluptatem ut
                                         corporis nulla accusantium sequi.
                                     </p>
+                                    <a href="/natureza">Ler mais</a>
                                 </div>
                             </div>
 
@@ -191,6 +172,7 @@
                                         adipisci velit pariatur voluptatem ut
                                         corporis nulla accusantium sequi.
                                     </p>
+                                    <a href="/natureza">Ler mais</a>
                                 </div>
                             </div>
 
@@ -208,6 +190,7 @@
                                         adipisci velit pariatur voluptatem ut
                                         corporis nulla accusantium sequi.
                                     </p>
+                                    <a href="/natureza">Ler mais</a>
                                 </div>
                             </div>
                         </div>
@@ -216,12 +199,7 @@
             </section>
         </main>
 
-        <footer>
-            <p>
-                Desenvolvido por
-                <a href="https://www.bruno-guerra.dev">Bruno Guerra</a>.
-            </p>
-        </footer>
+        <%- include('partials/footer.html') %>
 
         <script
             type="module"

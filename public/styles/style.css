@@ -183,11 +183,12 @@ main #latestNews .content .news .card-news .description {
 }
 main #latestNews .content .news .card-news .description p {
     font-size: 1.5rem;
-    color: var(--text-gray);
+    color: var(--text-gray200);
 }
-main #latestNews .content .news .card-news .description p:first-child {
+main #latestNews .content .news .card-news .description p:first-of-type {
     text-transform: uppercase;
     font-weight: 500;
+    color: var(--text-gray100);
 }
 main #latestNews .content .news .card-news .description h3 {
     margin-top: 3rem;
@@ -198,15 +199,23 @@ main #latestNews .content .news .card-news .description h3 {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-main #latestNews .content .news .card-news .description p:last-child {
+main #latestNews .content .news .card-news .description p:last-of-type {
     margin-top: 1.8rem;
     font-weight: 400;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-main #latestNews .content .mostRead {
+main #latestNews .content .news .card-news .description a {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--purple);
+    margin-top: 1rem;
+}
+main #latestNews .content .mostRead,
+main #news-singlePage .mostRead {
     min-width: 32rem;
     flex: 1;
     background-color: var(--background-white);
@@ -216,45 +225,44 @@ main #latestNews .content .mostRead {
     display: flex;
     flex-direction: column;
 }
-main #latestNews .content .mostRead .title {
+main #latestNews .content .mostRead .title,
+main #news-singlePage .mostRead .title {
     width: 100%;
     background-color: var(--purple);
     padding: 2rem 3rem;
     text-align: center;
 }
-main #latestNews .content .mostRead .title h3 {
+main #latestNews .content .mostRead .title h3,
+main #news-singlePage .mostRead .title h3 {
     font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     color: var(--text-white);
 }
-main #latestNews .content .mostRead .content-mostRead {
+main #latestNews .content .mostRead .content-mostRead,
+main #news-singlePage .mostRead .content-mostRead {
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     overflow-y: auto;
 }
-main #latestNews .content .mostRead .content-mostRead .card-mostRead {
+main #latestNews .content .mostRead .content-mostRead .card-mostRead,
+main #news-singlePage .mostRead .content-mostRead .card-mostRead {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-main #latestNews .content .mostRead .content-mostRead .card-mostRead .image {
+main #latestNews .content .mostRead .content-mostRead .card-mostRead .image,
+main #news-singlePage .mostRead .content-mostRead .card-mostRead .image {
     min-width: 10rem;
     height: 10rem;
     background-color: var(--purple);
     border-radius: 1rem;
     overflow: hidden;
 }
-main
-    #latestNews
-    .content
-    .mostRead
-    .content-mostRead
-    .card-mostRead
-    .image
-    img {
+main #latestNews .content .mostRead .content-mostRead .card-mostRead .image img,
+main #news-singlePage .mostRead .content-mostRead .card-mostRead .image img {
     width: auto;
     object-fit: cover;
     object-position: center;
@@ -262,6 +270,13 @@ main
 main
     #latestNews
     .content
+    .mostRead
+    .content-mostRead
+    .card-mostRead
+    .description
+    p,
+main
+    #news-singlePage
     .mostRead
     .content-mostRead
     .card-mostRead
@@ -276,12 +291,21 @@ main
     .content-mostRead
     .card-mostRead
     .description
-    p:first-child {
+    p:first-of-type,
+main
+    #news-singlePage
+    .mostRead
+    .content-mostRead
+    .card-mostRead
+    .description
+    p:first-of-type {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-black);
     text-transform: uppercase;
 }
 main
@@ -291,14 +315,81 @@ main
     .content-mostRead
     .card-mostRead
     .description
-    p:last-child {
+    p:last-of-type,
+main
+    #news-singlePage
+    .mostRead
+    .content-mostRead
+    .card-mostRead
+    .description
+    p:last-of-type {
     font-size: 1.4rem;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin-top: 1rem;
-    color: var(--text-gray);
+    color: var(--text-gray100);
+}
+main
+    #latestNews
+    .content
+    .mostRead
+    .content-mostRead
+    .card-mostRead
+    .description
+    a,
+main
+    #news-singlePage
+    .mostRead
+    .content-mostRead
+    .card-mostRead
+    .description
+    a {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--purple);
+    margin-top: 0.7rem;
+}
+
+main #news-singlePage {
+    width: min(120rem, 90%);
+    padding: 5rem 0;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+}
+main #news-singlePage .content-news {
+    width: 100%;
+    background-color: var(--background-white);
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+}
+main #news-singlePage .content-news h2 {
+    font-size: 4.2rem;
+}
+main #news-singlePage .content-news p.author {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-gray200);
+    margin: 2rem 0;
+}
+main #news-singlePage .content-news p.text {
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+main #news-singlePage .content-news h3 {
+    font-size: 3.3rem;
+    margin: 5rem 0 1rem;
+    color: var(--text-gray200);
 }
 
 @media (max-width: 1334px) {
@@ -320,17 +411,23 @@ main
     main #latestNews .content .news .card-news {
         max-width: 100%;
     }
-    main #latestNews .content .mostRead {
+    main #latestNews .content .mostRead,
+    main #news-singlePage .mostRead {
         min-width: 0;
         flex: 0;
     }
-    main #latestNews .content .mostRead .content-mostRead .card-mostRead {
+    main #latestNews .content .mostRead .content-mostRead,
+    main #news-singlePage .mostRead .content-mostRead {
+        padding: 4rem;
+        gap: 5rem;
+    }
+    main #latestNews .content .mostRead .content-mostRead .card-mostRead,
+    main #news-singlePage .mostRead .content-mostRead .card-mostRead {
         flex-flow: row wrap;
         gap: 2rem;
     }
-    main #latestNews .content .mostRead .content-mostRead {
-        padding: 4rem;
-        gap: 5rem;
+    main #news-singlePage {
+        flex-direction: column;
     }
 }
 
