@@ -1,40 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="en">
     <%- include('partials/head.html') %>
     <body>
         <%- include('partials/header.html') %>
 
         <main>
-            <section id="spotlight">
-                <div class="slider">
-                    <a href="/<%=posts[0].slug%>" class="slider-item">
-                        <div class="overlay"></div>
-                        <div
-                            class="image"
-                            style="
-                                background: var(--purple)
-                                    url(<%=posts[0].imagem%>) no-repeat
-                                    center/cover;
-                            "
-                        ></div>
-                        <div class="content">
-                            <div class="top">
-                                <p>Por <%=posts[0].author%></p>
-                            </div>
-                            <div class="description">
-                                <h2><%= posts[0].titulo %></h2>
-                                <p><%- posts[0].conteudo.substr(0, 200) %></p>
-                            </div>
-                        </div>
-                    </a>
+            <section id="search">
+                <div class="title-search">
+                    <h4>Resultados da pesquisa: <%= nameResult %></h4>
+                    <p>Encontrados: <%= results %></p>
                 </div>
-            </section>
-
-            <section id="latestNews">
-                <h2>Últimas Postagens</h2>
                 <div class="content">
                     <div class="news">
-                        <% posts.forEach(post => { %>
+                        <% if(results > 0) { posts.forEach(post => { %>
                         <div class="card-news">
                             <div
                                 class="image"
@@ -46,12 +24,16 @@
                             ></div>
                             <div class="description">
                                 <p><%= post.categoria %></p>
-                                <h3 title="post.titulo"><%= post.titulo %></h3>
+                                <h3 title="<%=post.titulo%>">
+                                    <%= post.titulo %>
+                                </h3>
                                 <p><%- post.conteudo.substr(0, 200) %></p>
                                 <a href="/<%= post.slug %>">Ler mais</a>
                             </div>
                         </div>
-                        <% }); %>
+                        <% })} else { %>
+                        <p class="notFoundNews">Nenhum Resultado Encontrado</p>
+                        <%}%>
                     </div>
                     <div class="mostRead">
                         <div class="title">

@@ -8,10 +8,10 @@ const app = express();
 
 mongoose
     .connect(
-        "mongodb+srv://root:root123@cluster0.mneqh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+        "mongodb+srv://root:root123@cluster0.mneqh.mongodb.net/portalnoticias?retryWrites=true&w=majority",
         { useNewUrlParser: true, useUnifiedTopology: true }
     )
-    .then(() => console.log("Conectado com sucesso"))
+    .then(() => console.log("Success MongoDB Atlas Connected"))
     .catch((error) => console.log(error.message));
 
 app.use(bodyParser.json());
