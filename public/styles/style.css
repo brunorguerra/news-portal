@@ -169,7 +169,7 @@ main #search .content .news {
 }
 main #latestNews .content .news .card-news,
 main #search .content .news .card-news {
-    max-width: 40rem;
+    width: 40rem;
     height: 60rem;
     background-color: var(--background-white);
     border-radius: 1rem;
@@ -494,6 +494,11 @@ main #search .content .mostRead .content-mostRead .card-mostRead .image {
     }
     main #latestNews .content .mostRead .content-mostRead,
     main #news-singlePage .mostRead .content-mostRead,
+    main #search .content .mostRead .content-mostRead {
+        align-items: flex-start;
+    }
+    main #latestNews .content .mostRead .content-mostRead .card-mostRead,
+    main #news-singlePage .mostRead .content-mostRead .card-mostRead,
     main #search .content .mostRead .content-mostRead .card-mostRead {
         padding: 4rem;
         gap: 5rem;

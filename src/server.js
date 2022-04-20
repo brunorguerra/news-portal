@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require("express-session");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -16,6 +17,15 @@ mongoose
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(
+    session({
+        secret: "keyboard cat",
+        resave: false,
+        saveUninitialized: false,
+        cookie: { secure: false, maxAge: 600000 },
+    })
+);
 
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");

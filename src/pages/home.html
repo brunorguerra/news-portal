@@ -46,7 +46,9 @@
                             ></div>
                             <div class="description">
                                 <p><%= post.categoria %></p>
-                                <h3 title="post.titulo"><%= post.titulo %></h3>
+                                <h3 title="<%=post.titulo%>">
+                                    <%= post.titulo %>
+                                </h3>
                                 <p><%- post.conteudo.substr(0, 200) %></p>
                                 <a href="/<%= post.slug %>">Ler mais</a>
                             </div>
