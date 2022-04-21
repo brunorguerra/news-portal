@@ -23,7 +23,11 @@
             <div class="createPost">
                 <fieldset>
                     <legend>Criar <span>Publicação</span></legend>
-                    <form action="/admin/register-post" method="POST">
+                    <form
+                        enctype="multipart/form-data"
+                        action="/admin/register-post"
+                        method="POST"
+                    >
                         <div class="input">
                             <label for="title">Título da Publicação:</label>
                             <input type="text" name="title" id="title" />
@@ -35,13 +39,10 @@
                         </div>
 
                         <div class="input">
-                            <label for="imagePost">Url da Imagem</label>
-                            <input
-                                type="text"
-                                name="imagePost"
-                                id="imagePost"
-                                placeholder="https://www.minhaimagem.com/imagem.jpg"
-                            />
+                            <label for="imagePost" class="importImg"
+                                >Importar Imagem</label
+                            >
+                            <input type="file" name="image" id="imagePost" />
                         </div>
 
                         <div class="input">

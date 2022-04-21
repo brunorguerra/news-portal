@@ -2,6 +2,7 @@ const express = require("express");
 const route = express.Router();
 const Posts = require("./schema/Posts");
 const Form = require("./schema/Form");
+const fs = require("fs");
 
 route.get("/", (req, res) => {
     if (req.query.search == null) {
@@ -88,9 +89,19 @@ route.get("/admin/control-panel", (req, res) => {
 });
 
 route.post("/admin/register-post", (req, res) => {
+    let format = req.files.image.name.split(".");
+    let imagePost = "";
+
+    if (format[format.length - 1] == "png") {
+        imagePost = new Date().getTime() + ".png";
+        req.files.image.mv(`${__dirname}/../public/images/${imagePost}`);
+    } else {
+        fs.unlinkSync(req.files.image.tempFilePath);
+    }
+
     Posts.create({
         titulo: req.body.title,
-        imagem: req.body.imagePost,
+        imagem: "http://localhost:8080/images/" + imagePost,
         categoria: req.body.category,
         conteudo: req.body.description,
         slug: req.body.slug,

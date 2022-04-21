@@ -2,16 +2,14 @@ const express = require("express");
 const session = require("express-session");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const fileupload = require("express-fileupload");
 const path = require("path");
 const route = require("./routes");
 
 const app = express();
 
 mongoose
-    .connect(
-        "mongodb+srv://root:root123@cluster0.mneqh.mongodb.net/portalnoticias?retryWrites=true&w=majority",
-        { useNewUrlParser: true, useUnifiedTopology: true }
-    )
+    .connect("", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Success MongoDB Atlas Connected"))
     .catch((error) => console.log(error.message));
 
@@ -24,6 +22,13 @@ app.use(
         resave: false,
         saveUninitialized: false,
         cookie: { secure: false, maxAge: 600000 },
+    })
+);
+
+app.use(
+    fileupload({
+        useTempFiles: true,
+        tempFileDir: path.join(__dirname, "temp"),
     })
 );
 
