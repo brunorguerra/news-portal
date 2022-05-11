@@ -24,6 +24,7 @@ This project was developed for learning with the following technologies:
 -   [Express](https://expressjs.com/pt-br/)
 -   [EJS](https://ejs.co/)
 -   [MongoDB](https://www.mongodb.com/)
+-   [Sass](https://sass-lang.com/)
 -   [VS Code][vc] with [ESLint][vceslint]
 
 ## How-To-Use
