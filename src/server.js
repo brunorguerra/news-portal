@@ -8,8 +8,14 @@ const route = require("./routes");
 
 const app = express();
 
+const passwordMongoDB = "";
+const databaseMongoDB = "";
+
 mongoose
-    .connect("", { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(
+        `mongodb+srv://root:root123@cluster0.mneqh.mongodb.net/portalnoticias?retryWrites=true&w=majority`,
+        { useNewUrlParser: true, useUnifiedTopology: true }
+    )
     .then(() => console.log("Success MongoDB Atlas Connected"))
     .catch((error) => console.log(error.message));
 
@@ -32,11 +38,12 @@ app.use(
     })
 );
 
-app.engine("html", require("ejs").renderFile);
-app.set("view engine", "html");
+app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.set("views", path.join(__dirname, "/pages"));
 
 app.use(route);
 
-app.listen(8080, () => console.log("running server"));
+app.listen(8080, () =>
+    console.log("running server, access in browser -> http://localhost:8080")
+);
